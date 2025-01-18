@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 pytube = "^15.0.0"
 yt-dlp = "^2025.1.15"
+flet = "^0.25.2"
 
 
 [build-system]

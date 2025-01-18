@@ -1,2 +1,6 @@
 videos/*.mkv
 videos/*.webm
+.venv
+venv
+
+__pycache__
