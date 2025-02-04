@@ -1,3 +1,4 @@
+from datetime import datetime
 import flet as ft
 
 class Search(ft.Container):
@@ -17,7 +18,7 @@ class Search(ft.Container):
             icon=icon,
             text="Search",
             bgcolor=ft.Colors.TRANSPARENT, 
-            on_click=self.get_text,
+            on_click=self.download,
         )
         self.content = ft.Row([self.input, self.button])
         self.content.alignment = ft.MainAxisAlignment.CENTER
@@ -25,7 +26,6 @@ class Search(ft.Container):
         self.margin = (50)
         self.download_function = download_function
 
-    def get_text(self, e):
-        print(self.input.value)
+    def download(self, e):
         value = self.input.value
-        self.download_function(value, "videos", "teste")
+        self.download_function(value, "videos", f"teste-search-{datetime.now()}")
