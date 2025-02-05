@@ -6,7 +6,7 @@ class Search(ft.Container):
             self,
             download_function,
             placeholder: str = "Search for videos",
-            icon: ft.Icon = ft.icons.SEARCH,
+            icon: ft.Icon = ft.Icons.SEARCH,
             **kwargs,
         ):
         super().__init__(**kwargs)
@@ -19,6 +19,8 @@ class Search(ft.Container):
             text="Search",
             bgcolor=ft.Colors.TRANSPARENT, 
             on_click=self.download,
+            width=100,
+            height=50
         )
         self.content = ft.Row([self.input, self.button])
         self.content.alignment = ft.MainAxisAlignment.CENTER
@@ -29,3 +31,9 @@ class Search(ft.Container):
     def download(self, e):
         value = self.input.value
         self.download_function(value, "videos", f"teste-search-{datetime.now()}")
+
+    def clean_field(self):
+        self.input.value = None
+        print("Limpei")
+        print(self.input.value)
+        self.update()
